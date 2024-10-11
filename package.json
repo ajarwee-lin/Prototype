@@ -2,7 +2,7 @@
   "name": "prototype",
   "version": "1.0.0",
   "description": "Prototype for U-Tech project",
-  "homepage": "https://ajarwee-lin.github.io/prototype", 
+  "homepage": "https://ajarwee-lin.github.io/prototype",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
@@ -10,12 +10,14 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "clean": "rm -rf build"
   },
   "dependencies": {
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
-    "react-scripts": "5.0.0"
+    "react-scripts": "5.0.0",
+    "react-router-dom": "^6.0.0"  // Added react-router-dom
   },
   "devDependencies": {
     "gh-pages": "^6.1.1"

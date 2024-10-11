@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import axios from 'axios';
 
 const URide = () => {
   const [rideDetails, setRideDetails] = useState({ pickup: '', destination: '' });
@@ -8,10 +9,14 @@ const URide = () => {
     setRideDetails(prevState => ({ ...prevState, [name]: value }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Ride Details:', rideDetails);
-    // Submit the ride details to the backend
+    try {
+      const response = await axios.post('http://localhost:5000/api/ride', rideDetails); // Replace with actual API
+      console.log('Ride Booked:', response.data);
+    } catch (error) {
+      console.error('Error booking ride:', error);
+    }
   };
 
   return (
